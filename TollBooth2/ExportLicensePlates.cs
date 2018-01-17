@@ -11,7 +11,9 @@ namespace TollBooth
     public static class ExportLicensePlates
     {
         [FunctionName("ExportLicensePlates")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+        public static async Task<HttpResponseMessage> Run(
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, 
+            TraceWriter log)
         {
             int exportedCount = 0;
             log.Info("Finding license plate data to export");
